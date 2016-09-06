@@ -1,0 +1,33 @@
+<ion-view view-title="Precios">
+  <ion-content>
+    <div class="row" ng-show="ctrl.isProduct">
+      <div class="col-sm-4">
+        <img class="compared-img" src="{{ctrl.product.photo}}">
+      </div>
+      <div class="col-sm-8">
+        <div>
+          <h2 class="compared-name">{{ctrl.product.name}}</h2>
+        </div>
+        <p>Precio: ${{ctrl.product.price}}</p>
+      </div>
+    </div>
+    <div class="row cart-heading" ng-hide="ctrl.isProduct">
+      <h1>{{ctrl.cart.name}}</h1>
+    </div>
+    <!-- content goes here -->
+    <ion-list ng-repeat="store in ctrl.stores">
+      <ion-item
+        class="item-remove-animate item-avatar item-icon-right"
+        type="item-text-wrap"
+        ui-sref="main.store({id: ctrl.stores.indexOf(store)})">
+        <img src="{{store.photo}}">
+        <h2>{{store.name}}</h2>
+        <h4 ng-show="ctrl.isProduct">${{(store.price + ctrl.product.price).toFixed(2)}}</h4>
+        <h4 ng-hide="ctrl.isProduct">${{(store.price + ctrl.cart.price).toFixed(2)}}</h4>
+        <p>A {{store.distance}} kms...</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

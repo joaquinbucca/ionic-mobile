@@ -1,0 +1,53 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+  <!-- CONTENT -->
+  <ion-side-menu-content>
+
+    <!-- header bar -->
+    <!-- the nav bar will be updated as we navigate between views -->
+    <ion-nav-bar class="bar-royal">
+      <!-- back button, shown if applicable -->
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <!-- nav button, shown if applicable -->
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <!-- ROUTING INJECTED HERE: pageContent -->
+    <ion-nav-view name="pageContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <!-- SIDEMENU -->
+  <ion-side-menu side="left">
+
+    <ion-header-bar class="dark-bg bar bar-header menu-header">
+      <div class="row">
+        <span class="avatar" style="background: url('main/assets/images/profile.jpg'); background-size: cover;"></span>
+      </div>
+      <div class="row menu-profile-name">
+        <h2><a class="no-anchor-style" menu-close ui-sref="main.profile">Joaquin Bucca</a></h2>
+      </div>
+    </ion-header-bar>
+
+    <!-- menu content -->
+    <ion-content class="menu-sidebar-content2">
+      <div class="list">
+        <a class="item item-icon-left" menu-close href="" ng-style="{'font-weight': menu.isCurrentCart(cart) ? 'bold' : 'normal'}" ng-click="menu.selectCart(cart)" ng-repeat="cart in menu.carts">
+          <i class="icon ion-android-cart"></i> {{cart.name}}
+        </a>
+        <a class="item item-icon-left" menu-close href="" ng-click="menu.newCart()">
+          <i class="icon ion-plus"></i> Nuevo Carrito
+        </a>
+        <a class="item item-icon-left" menu-close ui-sref="main.categories" ng-style="{'font-weight': menu.isCategoryView() ? 'bold' : 'normal'}">
+          <i class="icon ion-android-list"></i> Categorías
+        </a>
+      </div>
+    </ion-content>
+
+  </ion-side-menu>
+
+</ion-side-menus>

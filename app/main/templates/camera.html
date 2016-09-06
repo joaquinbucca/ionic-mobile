@@ -1,0 +1,25 @@
+<ion-view view-title="Escanee su producto">
+  <!-- do you want padding -->
+  <ion-content class="padding">
+
+    <!-- content goes here -->
+    <div class="text-center" >
+      <div class="row text-center" ng-show="ctrl.pictureTaken">
+        <img ng-src="main/assets/images/villavicencio.jpg" style="width: 260px; height: 260px">
+        <p>
+          <span style="font-size: large">Precio</span><br/>
+          <label class="item item-input">
+            <input type="text" placeholder="Precio">
+          </label>
+        </p>
+      </div>
+      <div class="row text-center">
+        <button class = "button button-fab button-positive icon ion-camera" ng-click="ctrl.takePicture()"></button>
+        <button class = "button button-fab button-assertive icon ion-search" ng-click="ctrl.getPicture()"></button>
+        <img ng-src = "{{ctrl.user.picture}}">
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+

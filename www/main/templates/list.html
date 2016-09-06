@@ -1,0 +1,22 @@
+<ion-view cache-view="false" view-title="Carrito">
+  <ion-content>
+    <button ng-click="ctrl.openCamera()"  id="fab" class="button button-energized-900 button-fab button-fab-bottom-right">
+      <i class="icon ion-plus"></i>
+    </button>
+
+    <!-- content goes here -->
+    <ion-list ng-repeat="product in ctrl.products">
+      <ion-item
+        class="item-remove-animate item-avatar item-icon-right"
+        type="item-text-wrap"
+        ui-sref="main.compared({id : ctrl.products.indexOf(product)})">
+        <img src="{{product.photo}}">
+        <h2>{{product.name}}</h2>
+        <p>${{product.price}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+    <button ng-show="ctrl.products.length > 0" class="button button-block button-energized-900" ng-click="ctrl.calculateBetterOption()">Calcular mejor opción</button>
+
+  </ion-content>
+</ion-view>

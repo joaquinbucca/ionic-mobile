@@ -1,0 +1,23 @@
+<ion-view cache-view="false" view-title="Categorías">
+  <ion-content>
+    <button ng-click="ctrl.openCamera()"  id="fab" class="button button-balanced button-fab button-fab-bottom-right">
+      <i class="icon ion-android-cart"></i>
+    </button>
+
+    <div>
+      <div ng-repeat-start="cat in ctrl.categories"></div>
+      <button class="button button-block {{cat.style}} primary-cat" ng-click="ctrl.openCategories(cat)"><img src="{{cat.photo}}" class="cat-icon">{{cat.name}} <i class="icon" ng-class="cat.opened ? 'ion-chevron-up' : 'ion-chevron-down'"></i></button>
+      <div ng-repeat-start="second in cat.categories"></div>
+      <button ng-show="second.show" class="button button-block second-category" ng-click="ctrl.openCategories(second)">{{second.name}} <i class="icon" ng-class="second.opened ? 'ion-chevron-up' : 'ion-chevron-down'"></i></button>
+      <div ng-repeat-start="third in second.categories"></div>
+      <button ng-show="third.show" class="button button-block third-category">{{third.name}} <i class="icon" ng-class="third.opened ? 'ion-chevron-up' : 'ion-chevron-down'"></i></button>
+      <div ng-repeat="product in third.products" class="row"></div>
+      <div ng-repeat-end></div>
+      <div ng-repeat-end></div>
+      <div ng-repeat-end></div>
+    </div>
+    <button ng-show="ctrl.products.length > 0" class="button button-block button-energized-900" ng-click="ctrl.calculateBetterOption()">Calcular mejor opción</button>
+
+  </ion-content>
+</ion-view>
+

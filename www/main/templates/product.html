@@ -1,0 +1,26 @@
+<ion-view view-title="Agua Villavicencio">
+  <!-- do you want padding -->
+  <ion-content class="padding">
+
+    <!-- content goes here -->
+    <div class="text-center">
+      <h3>{{ctrl.product.name}}</h3>
+      <img ng-src="{{ctrl.product.photo}}" style="width: 260px; height: 260px">
+      <div class="list">
+        <label class="item item-input item-stacked-label" style="text-align: center">
+          <span class="input-label">Precio</span>
+          <input type="text" style="text-align: center" placeholder="Precio" ng-model="ctrl.product.price">
+        </label>
+        <label class="item item-input item-stacked-label" style="text-align: center">
+          <span class="input-label">Local</span>
+          <input type="text" style="text-align: center" placeholder="Local" ng-model="ctrl.product.store">
+        </label>
+      </div>
+      <div>
+        <button ng-click="ctrl.addToList()" class="button button-fab button-positive icon ion-android-cart"></button>
+        <button ng-click="ctrl.compareProducts()" class="button button-fab button-assertive icon ion-connection-bars"></button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

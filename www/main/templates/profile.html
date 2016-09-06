@@ -1,0 +1,41 @@
+<ion-view view-title="Perfil" class="pane" nav-view="active"
+            style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+    <ion-content class="scroll-content ionic-scroll  has-header">
+      <div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+        <div class="hero " style="background-image: url('main/assets/images/supermarket.jpeg');">
+          <div class="content profile-content">
+            <div class="avatar" style="background-image: url('main/assets/images/profile.jpg');"></div>
+            <h3><a class="dark">Joaquin Bucca</a></h3>
+          </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+          <a ng-click="ctrl.showCarts()" class="tab-item" >
+            <i class="icon ion-android-cart"></i> Carritos
+          </a>
+          <a ng-click="ctrl.showLocations()" class="tab-item" >
+            <i class="icon ion-map"></i> Ubicaciones
+          </a>
+        </div>
+        <div class="list" ng-show="ctrl.showCart">
+          <a class="item item-icon-left" href="" ng-style="{'font-weight': ctrl.isCurrentCart(cart) ? 'bold' : 'normal'}" ng-click="ctrl.selectCart(cart)" ng-repeat="cart in ctrl.carts">
+            <i class="icon ion-android-cart"></i> {{cart.name}}
+          </a>
+          <a class="item item-icon-left" href="" ng-click="ctrl.newCart()">
+            <i class="icon ion-plus"></i> Nuevo Carrito
+          </a>
+        </div>
+        <div class="list" ng-hide="ctrl.showCart">
+          <a class="item item-icon-left" href="" ng-click="ctrl.selectLocation(location)" ng-style="{'font-weight': ctrl.isCurrentLocation(location) ? 'bold' : 'normal'}" ng-repeat="location in ctrl.locations">
+            <i class="icon ion-android-cart"></i> {{location.name}}
+          </a>
+          <a class="item item-icon-left" href="" ng-click="ctrl.newLocation()">
+            <i class="icon ion-plus"></i> Nueva Ubicación
+          </a>
+        </div>
+      </div>
+      <div class="scroll-bar scroll-bar-v">
+        <div class="scroll-bar-indicator scroll-bar-fade-out"
+             style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 558px;"></div>
+      </div>
+    </ion-content>
+  </ion-view>

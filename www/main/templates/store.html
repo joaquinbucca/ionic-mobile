@@ -1,0 +1,19 @@
+<ion-view view-title="{{ctrl.store.name}}">
+  <ion-content>
+    <div class="row">
+      <div class="col-sm-3">
+        <img class="compared-img" src="{{ctrl.store.photo}}">
+      </div>
+      <div class="col-sm-8 left-margin">
+        <div>
+          <h2 class="compared-name">{{ctrl.store.name}}</h2>
+        </div>
+        <p>A {{ctrl.store.distance}} kms...</p>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <img style="width: 100%; height: 100%;" src="{{ctrl.store.location}}" alt="">
+    </div>
+  </ion-content>
+</ion-view>
